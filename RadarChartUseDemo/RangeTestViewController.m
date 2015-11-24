@@ -27,8 +27,9 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    p = [[JYRadarChart alloc] initWithFrame:CGRectMake(30, 20, 250, 200)];
+    p = [[JYRadarChart alloc] initWithFrame:CGRectMake(0, 30, self.view.bounds.size.width, 200)];
     //    NSArray *a1 = @[@(81), @(97), @(87), @(60), @(65), @(77)];
+    [p setColors:@[ChartFirstColor,ChartSecondColor,[UIColor yellowColor], [UIColor purpleColor]]];
     NSArray *a1 = @[@"80", @"200", @"7", @"60", @"200", @"100"];
     NSArray *a2 = @[@"30", @"100", @"5", @"80", @"120", @"80"];
     
@@ -56,8 +57,8 @@
     p.attributes = @[@"Attack", @"Defense", @"Speed", @"HP", @"MP", @"IQ"];
     //是否显示雷达线条说明
     p.showLegend = YES;
-    [p setTitles:@[@"archer"]];
-    [p setColors:@[ChartFirstColor,ChartSecondColor,[UIColor yellowColor], [UIColor purpleColor]]];
+    [p setTitles:@[@"雷达图规定分支取值范围"]];
+    
     [self.view addSubview:p];
     
     //    [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(updateRadarChartData) userInfo:nil repeats:YES];

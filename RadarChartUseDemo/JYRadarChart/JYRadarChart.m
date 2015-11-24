@@ -83,7 +83,6 @@
 	[super setNeedsDisplay];
 	[self.legendView sizeToFit];
 	[self.legendView setNeedsDisplay];
-    NSLog(@"setNeedsDisplay");
 
 }
 
@@ -104,7 +103,6 @@
 - (void)setShowPointValue:(BOOL)showPointValue
 {
     _showPointValue = showPointValue;
-    NSLog(@"setShowPointValue");
 }
 
 - (void)layoutSubviews {
@@ -117,7 +115,6 @@
 }
 
 - (void)drawRect:(CGRect)rect {
-    NSLog(@"drawRect");
     for (UIView *la in _pointValueLabelArray) {
         [la removeFromSuperview];
     }
@@ -257,6 +254,7 @@
                     pointLabel.font = [UIFont systemFontOfSize:12];
                     pointLabel.adjustsFontSizeToFitWidth = YES;
                     pointLabel.text = pointLabelText;
+                    pointLabel.textColor = colors[serie];
                     [self addSubview:pointLabel];
                     if (yVal<_centerPoint.y) {
                         if (xVal<_centerPoint.x) {
